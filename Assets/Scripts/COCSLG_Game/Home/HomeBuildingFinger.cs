@@ -19,7 +19,7 @@ namespace COCSLG_Game
             }
 
             //相机停止移动
-            FingerCamera.GetInstance().couldMove = false;
+            FingerCamera.GetInstance().couldDrag = false;
             // first finger
             FingerGestures.Finger finger = gesture.Fingers[0];
 
@@ -37,7 +37,7 @@ namespace COCSLG_Game
                 else
                 {
                     dragFingerIndex = -1;
-                    FingerCamera.GetInstance().couldMove = true;
+                    FingerCamera.GetInstance().couldDrag = true;
                     var gridPos = HomeGridManager.GetInstance().WorldPosToGridPos(gesture.Selection.transform.position);
                     var cellCenter = HomeGridManager.GetInstance().GridPosToCellCenterInWorld(gridPos);
                     //transform.position = cellCenter;

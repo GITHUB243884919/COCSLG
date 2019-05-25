@@ -810,6 +810,7 @@ GameObject:
   - component: {fileID: 1557247926}
   - component: {fileID: 1557247927}
   - component: {fileID: 1557247925}
+  - component: {fileID: 1557247928}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -892,11 +893,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f1a535bb8a6cc4d8c6111b3c11e6c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 0.02
-  smoothSpeed: 1
+  couldDrag: 1
+  dragSensitivity: 0.02
+  dragSmoothSpeed: 1
   minMoveArea: {x: -1000, y: -1000, z: -1000}
   maxMoveArea: {x: 1000, y: 1000, z: 1000}
-  couldMove: 1
+  pinching: 0
+  pinchSensitivity: 0.1
 --- !u!114 &1557247926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -933,6 +936,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b2ced6c46417c4dbd142951273aafe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1557247928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1557247920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c54b79afefd6e0f4aae4a7ab8c6865e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredFingerCount: 1
+  DistanceUnit: 2
+  MaxSimultaneousGestures: 1
+  ResetMode: 0
+  Raycaster: {fileID: 0}
+  ClusterManager: {fileID: 0}
+  Delegate: {fileID: 0}
+  UseSendMessage: 1
+  EventMessageName: OnPinch
+  EventMessageTarget: {fileID: 0}
+  SendMessageToSelection: 0
+  IsExclusive: 0
+  MinDOT: -0.7
+  MinDistance: 0.25
 --- !u!1 &1657549181
 GameObject:
   m_ObjectHideFlags: 0
