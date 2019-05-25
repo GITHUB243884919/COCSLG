@@ -2,24 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UFrame.CameraController;
-
+using UFrame.Sound;
 namespace COCSLG_Game
 {
+    /// <summary>
+    /// 基于FingerGestures实现的拖拽
+    /// </summary>
     public class HomeBuildingFinger : MonoBehaviour
     {
         int dragFingerIndex = -1;
         void OnDrag(DragGesture gesture)
         {
-            //if (gesture.Selection != gameObject)
-            //{
-            //    return;
-            //}
-
             if (!HomeBuildingManager.GetInstance().Contains(gesture.Selection))
             {
                 return;
             }
-            //Debug.Log("drag building " + gameObject.name);
+
+            //相机停止移动
             FingerCamera.GetInstance().couldMove = false;
             // first finger
             FingerGestures.Finger finger = gesture.Fingers[0];
@@ -43,6 +42,7 @@ namespace COCSLG_Game
                     var cellCenter = HomeGridManager.GetInstance().GridPosToCellCenterInWorld(gridPos);
                     //transform.position = cellCenter;
                     gesture.Selection.transform.position = cellCenter;
+                    SoundManager.GetInstance().PlaySound("sound/build_pickup_05");
                 }
             }
         }

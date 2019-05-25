@@ -3,7 +3,7 @@ CRC: 278920526
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ec9973716c6bdda261fcc94958320532
+    Hash: 09ccd0ee585a9316944af95c54e57b49
   TypeTreeHash:
     serializedVersion: 2
     Hash: f49f05f36a566d50434f7d9f3fb347da
@@ -26,4 +26,4 @@ ClassTypes:
 Assets:
 - Assets/GameResources/prefabs/mycube.prefab
 Dependencies:
-- D:/Fzy/Code/unity_study2019_New/Assets/StreamingAssets/Bundles/materials_mymaterial.unity3d
+- D:/Fzy/Code/COCSLG/Assets/StreamingAssets/Bundles/materials_mymaterial.unity3d

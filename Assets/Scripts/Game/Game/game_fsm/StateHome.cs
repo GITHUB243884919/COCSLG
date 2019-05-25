@@ -24,7 +24,9 @@ namespace Game
                         
             MessageManager.GetInstance().gameMessageCenter.Regist((int)GameMsg.C2C_Return_Login, MessageCallback);
             //加载Home场景
-            ResHelper.LoadScene(sceneHome);
+            //ResHelper.LoadScene(sceneHome);
+            UFrame.ResourceManagement.SceneManagement.GetInstance().LoadScene(
+                "scenes/home", SceneCallback);
         }
 
         public override void AddAllConvertCond()
@@ -63,6 +65,12 @@ namespace Game
             {
                 returnLogin = true;
             }
+        }
+
+        void SceneCallback()
+        {
+            var getter = ResHelper.LoadGameObject("prefabs/homebuilding/homebuilding");
+            var go = getter.Get();
         }
 
     }

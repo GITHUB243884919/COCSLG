@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1092377554
+CRC: 3151108451
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 137295addf4a4c4888586b1106fcda94
+    Hash: 969efe0b1656aa610a387772a847629c
   TypeTreeHash:
     serializedVersion: 2
-    Hash: d1d0693c4022f01c3297816424186504
+    Hash: 079c6cf781e1a3808f3f58e41e7cef02
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -39,8 +39,6 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 114
   Script: {fileID: 11500000, guid: a8b8c7e02626c3b428b66dea5f533c9e, type: 3}
-- Class: 115
-  Script: {instanceID: 0}
 - Class: 124
   Script: {instanceID: 0}
 - Class: 135
@@ -54,5 +52,5 @@ ClassTypes:
 Assets:
 - Assets/GameResources/scenes/TestFx.unity
 Dependencies:
-- D:/Fzy/Code/unity_study2019_New/Assets/StreamingAssets/Bundles/prefabs_avoidance.unity3d
-- D:/Fzy/Code/unity_study2019_New/Assets/StreamingAssets/Bundles/prefabs_tank.unity3d
+- D:/Fzy/Code/COCSLG/Assets/StreamingAssets/Bundles/prefabs_avoidance.unity3d
+- D:/Fzy/Code/COCSLG/Assets/StreamingAssets/Bundles/prefabs_tank.unity3d

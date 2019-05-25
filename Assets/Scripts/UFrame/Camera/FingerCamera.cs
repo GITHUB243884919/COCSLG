@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace UFrame.CameraController
 {
+    /// <summary>
+    /// 基于FingerGestures实现相机移动控制
+    /// </summary>
     public class FingerCamera : MonoBehaviour
     {
         public float sensitivity;
@@ -17,6 +20,7 @@ namespace UFrame.CameraController
 
         public bool couldMove = true;
         static FingerCamera instance;
+
         public static FingerCamera GetInstance()
         {
             return instance;
@@ -30,7 +34,6 @@ namespace UFrame.CameraController
 
         void OnDrag(DragGesture gesture)
         {
-            //dragGesture = (gesture.State == GestureRecognitionState.Ended || gesture.Selection != null) ? null : gesture;
             if (gesture.State == GestureRecognitionState.Ended || !couldMove)
             {
                 dragGesture = null;
@@ -64,7 +67,6 @@ namespace UFrame.CameraController
 
 
         }
-
 
         public Vector3 ConstrainToMoveArea(Vector3 moveTo)
         {

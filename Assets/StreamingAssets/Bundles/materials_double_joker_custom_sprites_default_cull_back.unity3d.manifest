@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 2424208722
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 124c584deef2eab72a66dd6444a3c747
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 6f165f44e4778b6c9d85e7a145a54cb1
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+Assets:
+- Assets/GameResources/materials/double_joker/Custom_Sprites_Default_Cull_Back.mat
+Dependencies:
+- D:/Fzy/Code/COCSLG/Assets/StreamingAssets/Bundles/shader.unity3d

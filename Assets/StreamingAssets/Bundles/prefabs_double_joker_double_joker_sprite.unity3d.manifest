@@ -1,0 +1,27 @@
+ManifestFileVersion: 0
+CRC: 4225731795
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: caed171864f2e7fec3fc70910a96a5ef
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 8ff82ff13442227a8182ba0937eb4b7d
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/GameResources/prefabs/double_joker/double_joker_sprite.prefab
+Dependencies:
+- D:/Fzy/Code/COCSLG/Assets/StreamingAssets/Bundles/materials_double_joker_custom_sprites_default_cull_back.unity3d
+- D:/Fzy/Code/COCSLG/Assets/StreamingAssets/Bundles/materials_double_joker_custom_sprites_default_cull_front.unity3d
+- D:/Fzy/Code/COCSLG/Assets/StreamingAssets/Bundles/ui_sprite.unity3d

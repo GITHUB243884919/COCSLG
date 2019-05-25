@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UFrame.ResourceManagement;
+using System.IO;
 
 namespace COCSLG_Game
 {
@@ -12,6 +13,8 @@ namespace COCSLG_Game
         {
             InitHomeGrid();
             InitHomeBuilding();
+            //string shaderPath = Path.Combine(Application.streamingAssetsPath, "Bundles/shader.unity3d");
+            //AssetBundle.LoadFromFile(shaderPath);
         }
 
         void Update()

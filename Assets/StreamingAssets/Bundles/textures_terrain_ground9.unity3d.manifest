@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 2695893326
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3266d79b5bbc4b46eb9bae4a96ec5570
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c73412a662fd4e4f36af34cbdf078b85
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+Assets:
+- Assets/GameResources/textures/terrain/ground9.png
+Dependencies: []

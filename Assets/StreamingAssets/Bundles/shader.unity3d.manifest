@@ -1,0 +1,22 @@
+ManifestFileVersion: 0
+CRC: 846349659
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f8df6206cfcff219aaf0b51d65e45b13
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 6370d3f9de9eca57f523bce048404a46
+HashAppended: 0
+ClassTypes:
+- Class: 48
+  Script: {instanceID: 0}
+Assets:
+- Assets/GameResources/shader/custom_ui_default_cullfront.shader
+- Assets/GameResources/shader/custom_trans.shader
+- Assets/GameResources/shader/custom_sprites_default_cull_back.shader
+- Assets/GameResources/shader/custom_colored_blended.shader
+- Assets/GameResources/shader/custom_terraindiffuse.shader
+- Assets/GameResources/shader/custom_sprites_default_cull_front.shader
+- Assets/GameResources/shader/custom_ui_default_cullback.shader
+Dependencies: []

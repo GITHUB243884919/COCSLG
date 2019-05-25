@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 3916319805
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2c442ebb36209677b2cc1819f35f5777
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c73412a662fd4e4f36af34cbdf078b85
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+Assets:
+- Assets/GameResources/textures/terrain/ground_04_nmp.jpg
+Dependencies: []

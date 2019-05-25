@@ -247,9 +247,12 @@ public class CreateAssetBundles
         InitGroupBundleConfig();
         BuildPerpare();
         string assetBundleDirectory = "Assets/StreamingAssets/" + UFrameConst.Bundle_Root_Dir;
+        //BuildAssetBundleOptions assetBundleOptions = BuildAssetBundleOptions.DeterministicAssetBundle |
+        //    BuildAssetBundleOptions.ChunkBasedCompression |
+        //    BuildAssetBundleOptions.DisableWriteTypeTree;
         BuildAssetBundleOptions assetBundleOptions = BuildAssetBundleOptions.DeterministicAssetBundle |
-            BuildAssetBundleOptions.ChunkBasedCompression |
-            BuildAssetBundleOptions.DisableWriteTypeTree;
+            BuildAssetBundleOptions.ChunkBasedCompression;
+
         BuildTarget targetPlatform = BuildTarget.Android;
 
         BuildPipeline.BuildAssetBundles(assetBundleDirectory,
@@ -272,9 +275,11 @@ public class CreateAssetBundles
         InitGroupBundleConfig();
         BuildPerpare();
         string assetBundleDirectory = "Assets/StreamingAssets/" + UFrameConst.Bundle_Root_Dir;
+        //BuildAssetBundleOptions assetBundleOptions = BuildAssetBundleOptions.DeterministicAssetBundle |
+        //    BuildAssetBundleOptions.ChunkBasedCompression |
+        //    BuildAssetBundleOptions.DisableWriteTypeTree;
         BuildAssetBundleOptions assetBundleOptions = BuildAssetBundleOptions.DeterministicAssetBundle |
-            BuildAssetBundleOptions.ChunkBasedCompression |
-            BuildAssetBundleOptions.DisableWriteTypeTree;
+            BuildAssetBundleOptions.ChunkBasedCompression;
 
         BuildTarget targetPlatform = BuildTarget.iOS;
         BuildPipeline.BuildAssetBundles(assetBundleDirectory,

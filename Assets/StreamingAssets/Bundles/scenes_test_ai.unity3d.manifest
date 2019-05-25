@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2781470030
+CRC: 4098796441
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 0cc365cfa25740bd85c698320798b250
+    Hash: 33633b2b94e76de348a8e253d41aaebd
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 096d195eefd8a4957a218dc25571eab8
+    Hash: 4e8e26045092b4c69e500c3869110658
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -40,6 +40,8 @@ ClassTypes:
 - Class: 108
   Script: {instanceID: 0}
 - Class: 114
+  Script: {instanceID: 0}
+- Class: 114
   Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -49,12 +51,6 @@ ClassTypes:
   Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 46dc99c5e6bf8d643bd03b4c9bd186b6, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: dc670a4ad12868e41967682a2dc32d6e, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: c26c7a0dcd8138d4194e0a4435a4740c, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 124
@@ -76,6 +72,6 @@ ClassTypes:
 Assets:
 - Assets/GameResources/scenes/test_ai.unity
 Dependencies:
-- D:/Fzy/Code/unity_study2019_New/Assets/StreamingAssets/Bundles/prefabs_battle_root.unity3d
-- D:/Fzy/Code/unity_study2019_New/Assets/StreamingAssets/Bundles/prefabs_easytouch.unity3d
-- D:/Fzy/Code/unity_study2019_New/Assets/StreamingAssets/Bundles/prefabs_tank.unity3d
+- D:/Fzy/Code/COCSLG/Assets/StreamingAssets/Bundles/prefabs_battle_root.unity3d
+- D:/Fzy/Code/COCSLG/Assets/StreamingAssets/Bundles/prefabs_easytouch.unity3d
+- D:/Fzy/Code/COCSLG/Assets/StreamingAssets/Bundles/prefabs_tank.unity3d

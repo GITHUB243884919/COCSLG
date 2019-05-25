@@ -3,7 +3,7 @@ CRC: 3514239766
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 8418956dca390c5080268dd6adc59b77
+    Hash: 7822eae727b9b724b6179d7648d0a337
   TypeTreeHash:
     serializedVersion: 2
     Hash: f634a38216357c0f552a5fc5997e3827
@@ -20,4 +20,4 @@ ClassTypes:
 Assets:
 - Assets/GameResources/prefabs/arrow_1.prefab
 Dependencies:
-- D:/Fzy/Code/unity_study2019_New/Assets/StreamingAssets/Bundles/materials_arrow_1.unity3d
+- D:/Fzy/Code/COCSLG/Assets/StreamingAssets/Bundles/materials_arrow_1.unity3d

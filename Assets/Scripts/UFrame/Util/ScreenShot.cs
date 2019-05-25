@@ -19,8 +19,8 @@ namespace UFrame.Util
             tex.ReadPixels(new Rect(0, 0, width, height), 0, 0);
             tex.Apply();
             byte[] bytes = tex.EncodeToPNG();
-            File.WriteAllBytes(Application.dataPath + "/ScreenShot.png", bytes);
-            UnityEditor.AssetDatabase.Refresh();
+            File.WriteAllBytes(Application.dataPath + "/screen_shot.png", bytes);
+            //UnityEditor.AssetDatabase.Refresh();
         }
     }
 }
