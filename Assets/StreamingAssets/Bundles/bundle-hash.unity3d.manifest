@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 977959072
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a3d65381a64e96d45e9ab7bd94989aba
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/GameResources/bundle-hash.txt
+Dependencies: []

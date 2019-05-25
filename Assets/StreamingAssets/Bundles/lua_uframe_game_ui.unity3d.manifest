@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 1962933232
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: cf956bae3b719f13f9389dff7eef875b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/LuaTemp/UFrame/Game/UI/UIBase.lua.bytes
+- Assets/LuaTemp/UFrame/Game/UI/RegistAllUI.lua.bytes
+- Assets/LuaTemp/UFrame/Game/UI/UINameDefine.lua.bytes
+- Assets/LuaTemp/UFrame/Game/UI/UI_Login.lua.bytes
+Dependencies: []

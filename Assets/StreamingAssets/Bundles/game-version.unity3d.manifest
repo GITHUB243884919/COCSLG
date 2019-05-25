@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 1368073813
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b529128a60d1def2f89e088eaa2326d2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/GameResources/game-version.txt
+Dependencies: []

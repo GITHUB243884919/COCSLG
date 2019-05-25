@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 336407163
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 594082d4904ae1c34301c0197a784e1c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/LuaTemp/UFrame/Game/GameState/StateLogin.lua.bytes
+Dependencies: []

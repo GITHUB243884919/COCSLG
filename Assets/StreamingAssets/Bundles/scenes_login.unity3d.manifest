@@ -1,0 +1,28 @@
+ManifestFileVersion: 0
+CRC: 641797601
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1cad5dc2a65d0622f4cca4431feb07ad
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: d7a9aaf0aaa62ca656f555e0e11d7bb3
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 104
+  Script: {instanceID: 0}
+- Class: 124
+  Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+Assets:
+- Assets/GameResources/scenes/login.unity
+Dependencies: []
