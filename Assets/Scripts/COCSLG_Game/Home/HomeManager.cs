@@ -42,11 +42,11 @@ namespace COCSLG_Game
             var getter = ResHelper.LoadGameObject("prefabs/homebuilding/homebuilding");
             var go = getter.Get();
             go.transform.SetParent(homeBuildingRoot);
-            go.transform.position = new Vector3(10, 0, -20);
+            go.transform.position = new Vector3(0, 0, 0);
             HomeBuildingManager.GetInstance().Add(go);
             Debug.Log(HomeBuildingManager.GetInstance().Count());
 
-            UFrame.CameraController.FingerCamera.GetInstance().PointAtScreenCenter(new Vector3(10, 0, -20));
+            UFrame.CameraController.FingerCamera.GetInstance().PointAtScreenCenter(new Vector3(0, 0, 0));
         }
     }
 }

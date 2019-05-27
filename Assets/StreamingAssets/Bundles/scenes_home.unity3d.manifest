@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2504030130
+CRC: 946358754
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 8d8cd7d856ae01c9aacfd195c8224825
+    Hash: cbd7cd40e3ab0556090a0546df62b009
   TypeTreeHash:
     serializedVersion: 2
-    Hash: d4fb6e9e1a4470ef330c50021cdc4f93
+    Hash: 5ba304793c00b870b4593f6fa76db427
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -54,8 +54,6 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 8e6f960a2165b2b4488e39f0f04bc056, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: f26e8d3b341c546409f54f2e5cb76a1d, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: d0c456ad45f197f4fa497e5c60d161c0, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: c54b79afefd6e0f4aae4a7ab8c6865e0, type: 3}
@@ -64,6 +62,8 @@ ClassTypes:
 - Class: 124
   Script: {instanceID: 0}
 - Class: 154
+  Script: {instanceID: 0}
+- Class: 156
   Script: {instanceID: 0}
 - Class: 157
   Script: {instanceID: 0}
@@ -74,5 +74,5 @@ ClassTypes:
 Assets:
 - Assets/GameResources/scenes/home.unity
 Dependencies:
-- D:/Fzy/Code/COCSLG/Assets/StreamingAssets/Bundles/materials_custom_terraindiffuse_mat.unity3d
 - D:/Fzy/Code/COCSLG/Assets/StreamingAssets/Bundles/prefabs_homebuilding_homebuilding.unity3d
+- D:/Fzy/Code/COCSLG/Assets/StreamingAssets/Bundles/terrain_data_terrain_data.unity3d

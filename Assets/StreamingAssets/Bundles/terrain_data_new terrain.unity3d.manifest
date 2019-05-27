@@ -1,0 +1,22 @@
+ManifestFileVersion: 0
+CRC: 3309901945
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6b57c792031fe72be3cd3a9aca8e0e05
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 38cff5986b199b2c394bcebee4891881
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 156
+  Script: {instanceID: 0}
+Assets:
+- Assets/GameResources/terrain_data/New Terrain.asset
+Dependencies:
+- D:/Fzy/Code/COCSLG/Assets/StreamingAssets/Bundles/textures_terrain_ground_04.unity3d
+- D:/Fzy/Code/COCSLG/Assets/StreamingAssets/Bundles/textures_terrain_ground_04_nmp.unity3d

@@ -202,6 +202,7 @@ shader/custom_trans,shader.unity3d
 shader/custom_ui_default_cullback,shader.unity3d
 shader/custom_ui_default_cullfront,shader.unity3d
 sound/build_pickup_05,sound_build_pickup_05.unity3d
+terrain_data/terrain_data,terrain_data_terrain_data.unity3d
 textures/arrow_1,textures_arrow_1.unity3d
 textures/border_horizontal,textures_border_horizontal.unity3d
 textures/border_vertical,textures_border_vertical.unity3d
