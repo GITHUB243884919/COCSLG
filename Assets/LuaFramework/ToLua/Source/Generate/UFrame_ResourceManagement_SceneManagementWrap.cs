@@ -9,6 +9,7 @@ public class UFrame_ResourceManagement_SceneManagementWrap
 		L.BeginClass(typeof(UFrame.ResourceManagement.SceneManagement), typeof(UFrame.Common.Singleton<UFrame.ResourceManagement.SceneManagement>));
 		L.RegFunction("Init", Init);
 		L.RegFunction("LoadScene", LoadScene);
+		L.RegFunction("UnLoadScene", UnLoadScene);
 		L.RegFunction("New", _CreateUFrame_ResourceManagement_SceneManagement);
 		L.RegFunction("__tostring", ToLua.op_ToString);
 		L.EndClass();
@@ -64,6 +65,22 @@ public class UFrame_ResourceManagement_SceneManagementWrap
 			string arg0 = ToLua.CheckString(L, 2);
 			System.Action arg1 = (System.Action)ToLua.CheckDelegate<System.Action>(L, 3);
 			obj.LoadScene(arg0, arg1);
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int UnLoadScene(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			UFrame.ResourceManagement.SceneManagement obj = (UFrame.ResourceManagement.SceneManagement)ToLua.CheckObject<UFrame.ResourceManagement.SceneManagement>(L, 1);
+			obj.UnLoadScene();
 			return 0;
 		}
 		catch (Exception e)

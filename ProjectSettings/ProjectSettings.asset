@@ -557,7 +557,7 @@ PlayerSettings:
   webGLUseWasm: 0
   webGLCompressionFormat: 1
   scriptingDefineSymbols:
-    7: RES_AB
+    7: RES_AB;LOG
   platformArchitecture: {}
   scriptingBackend: {}
   incrementalIl2cppBuild: {}

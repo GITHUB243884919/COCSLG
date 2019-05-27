@@ -8,37 +8,28 @@ namespace UFrame.ResourceManagement
 {
     public class SceneManagement : Singleton<SceneManagement>, ISingleton
     {
-        bool loadFinished = false;
+        System.Action cb;
         public void Init()
         {
-            loadFinished = false;
         }
 
         public void LoadScene(string scenePath, System.Action callback)
         {
-            loadFinished = false;
-
+            cb = callback;
+            SceneManager.sceneLoaded += SceneLoadedCallback;
             ResHelper.LoadScene(scenePath);
-            SceneManager.sceneLoaded += (a, b) =>
-            {
-                loadFinished = true;
-            };
-            if (callback != null)
-            {
-                RunCoroutine.Run(CoLoadFinished(callback));
-            }
         }
 
-        IEnumerator CoLoadFinished(System.Action callback)
+        public void UnLoadScene()
         {
-            if (!loadFinished)
-            {
-                yield return null;
-            }
+            SceneManager.sceneLoaded -= SceneLoadedCallback;
+        }
 
-            if (callback != null)
+        void SceneLoadedCallback( Scene a , LoadSceneMode b )
+        {
+            if (cb != null)
             {
-                callback();
+                cb();
             }
         }
     }

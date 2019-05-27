@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UFrame.Common;
 using COCSLG_Game;
+
 namespace UFrame.CameraController
 {
     /// <summary>
@@ -33,14 +34,11 @@ namespace UFrame.CameraController
             cacheCam = GetComponent<Camera>();
         }
 
-        private void Start()
+        void Start()
         {
             //var go = HomeBuildingManager.GetInstance().buildingLst[0];
-            ////var go2 = HomeBuildingManager.GetInstance().buildingLst[1];
-            ////Debug.LogError(go.transform.position + " " + go2.transform.position);
-            ////go.transform.TransformPoint(go.transform.localPosition);
-            PointAtScreenCenter(new Vector3(50, 0, -20));
-            //PointAtScreenCenter(go.transform.position);
+            //PointAtScreenCenter(new Vector3(50, 0, -20));
+            
         }
 
         //滑动
@@ -124,9 +122,10 @@ namespace UFrame.CameraController
             Ray ray = Camera.main.ScreenPointToRay(screenCenter);
             Vector3 groundPoint = UFrame.Math_F.Math.GetIntersectWithLineAndGround(ray.origin, ray.direction);
 
-            GameObject.CreatePrimitive(PrimitiveType.Capsule).transform.position = point;
-
+            //GameObject.CreatePrimitive(PrimitiveType.Capsule).transform.position = point;
             transform.position -= (groundPoint - point);
+
+            //防止LateUpdate的拖动
             dragMoveTo = transform.position;
         }
     }

@@ -22,6 +22,11 @@ namespace COCSLG_Game
         {
             return buildingLst.Contains(go);
         }
+
+        public int Count()
+        {
+            return buildingLst.Count;
+        }
     }
 }
 

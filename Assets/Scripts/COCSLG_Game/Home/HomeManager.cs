@@ -10,11 +10,17 @@ namespace COCSLG_Game
     public class HomeManager : Singleton<HomeManager>, ISingleton
     {
         Transform homeBuildingRoot;
+        bool isInit = false;
         public void Init()
         {
-            InitHomeGrid();
-            InitHomeBuilding();
+            if (!isInit)
+            {
+                InitHomeGrid();
+                InitHomeBuilding();
+                isInit = true;
+            }
         }
+
 
         void InitHomeGrid()
         {
@@ -27,6 +33,7 @@ namespace COCSLG_Game
 
         void InitHomeBuilding()
         {
+            Debug.LogError("InitHomeBuilding ");
             if (homeBuildingRoot == null)
             {
                 homeBuildingRoot = GameObject.Find("home_root/homebuilding_root").transform;
@@ -35,9 +42,11 @@ namespace COCSLG_Game
             var getter = ResHelper.LoadGameObject("prefabs/homebuilding/homebuilding");
             var go = getter.Get();
             go.transform.SetParent(homeBuildingRoot);
-            go.transform.position = new Vector3(50, 0, -20);
-
+            go.transform.position = new Vector3(10, 0, -20);
             HomeBuildingManager.GetInstance().Add(go);
+            Debug.Log(HomeBuildingManager.GetInstance().Count());
+
+            UFrame.CameraController.FingerCamera.GetInstance().PointAtScreenCenter(new Vector3(10, 0, -20));
         }
     }
 }
