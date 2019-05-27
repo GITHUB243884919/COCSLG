@@ -54,24 +54,12 @@ namespace COCSLG_Game
         /// <returns></returns>
         Vector3 ScreenPointToWorldPlane(Vector2 point)
         {
+            //todo 增加相机管理，不要使用Camera.main这种低效的方式
             Ray ray = Camera.main.ScreenPointToRay(point);
 
-            return GetIntersectWithLineAndPlane(ray.origin, ray.direction, Vector3.up, Vector3.left);
+            return UFrame.Math_F.Math.GetIntersectWithLineAndGround(ray.origin, ray.direction);
         }
 
-        /// <summary>
-        /// 计算直线与平面的交点
-        /// </summary>
-        /// <param name="point">直线上某一点</param>
-        /// <param name="direct">直线的方向</param>
-        /// <param name="planeNormal">垂直于平面的的向量</param>
-        /// <param name="planePoint">平面上的任意一点</param>
-        /// <returns></returns>
-        Vector3 GetIntersectWithLineAndPlane(Vector3 point, Vector3 direct, Vector3 planeNormal, Vector3 planePoint)
-        {
-            float d = Vector3.Dot(planePoint - point, planeNormal) / Vector3.Dot(direct.normalized, planeNormal);
-            return d * direct.normalized + point;
-        }
 
     }
 

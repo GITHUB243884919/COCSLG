@@ -15,6 +15,7 @@ namespace COCSLG_Game
         public float cellSize = 1f;
         public int gridSize = 4;
         public Color color = Color.green;
+        public bool couldDraw = false;
         /// <summary>
         /// 世界坐标转格子坐标
         /// </summary>

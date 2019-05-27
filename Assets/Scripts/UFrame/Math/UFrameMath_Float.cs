@@ -11,10 +11,10 @@ namespace UFrame.Math_F
         /// 前两个参数是线的参数（线上的点，线的方向）
         /// 后两个参数是平面参数（法向量，平面上的一点）
         /// </summary>
-        /// <param name="point"></param>
-        /// <param name="direct"></param>
-        /// <param name="planeNormal"></param>
-        /// <param name="planePoint"></param>
+        /// <param name="point">直线上某一点</param>
+        /// <param name="direct">直线的方向</param>
+        /// <param name="planeNormal">垂直于平面的的向量</param>
+        /// <param name="planePoint">平面上的任意一点</param>
         /// <returns></returns>
         public static Vector3 GetIntersectWithLineAndPlane(Vector3 point, Vector3 direct, Vector3 planeNormal, Vector3 planePoint)
         {

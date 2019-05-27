@@ -3,23 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UFrame.ResourceManagement;
 using System.IO;
+using UFrame.Common;
 
 namespace COCSLG_Game
 {
-    public class HomeManager : MonoBehaviour
+    public class HomeManager : Singleton<HomeManager>, ISingleton
     {
         Transform homeBuildingRoot;
-        void Awake()
+        public void Init()
         {
             InitHomeGrid();
             InitHomeBuilding();
-            //string shaderPath = Path.Combine(Application.streamingAssetsPath, "Bundles/shader.unity3d");
-            //AssetBundle.LoadFromFile(shaderPath);
-        }
-
-        void Update()
-        {
-
         }
 
         void InitHomeGrid()
@@ -28,6 +22,7 @@ namespace COCSLG_Game
             HomeGridManager.GetInstance().cellSize = 1;
             HomeGridManager.GetInstance().gridSize = 100;
             HomeGridManager.GetInstance().color = Color.green;
+            HomeGridManager.GetInstance().couldDraw = true;
         }
 
         void InitHomeBuilding()
@@ -43,13 +38,6 @@ namespace COCSLG_Game
             go.transform.position = new Vector3(50, 0, -20);
 
             HomeBuildingManager.GetInstance().Add(go);
-
-            //var getter2 = ResHelper.LoadGameObject("prefabs/homebuilding/homebuilding");
-            //var go2 = getter.Get();
-
-            ////go2.transform.SetParent(homeBuildingRoot, false);
-            //go2.transform.position = new Vector3(50, 0, -20);
-            //HomeBuildingManager.GetInstance().Add(go);
         }
     }
 }
