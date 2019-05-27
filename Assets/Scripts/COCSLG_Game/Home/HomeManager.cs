@@ -39,9 +39,17 @@ namespace COCSLG_Game
             }
             var getter = ResHelper.LoadGameObject("prefabs/homebuilding/homebuilding");
             var go = getter.Get();
-            go.transform.SetParent(homeBuildingRoot, false);
+            go.transform.SetParent(homeBuildingRoot);
+            go.transform.position = new Vector3(50, 0, -20);
 
             HomeBuildingManager.GetInstance().Add(go);
+
+            //var getter2 = ResHelper.LoadGameObject("prefabs/homebuilding/homebuilding");
+            //var go2 = getter.Get();
+
+            ////go2.transform.SetParent(homeBuildingRoot, false);
+            //go2.transform.position = new Vector3(50, 0, -20);
+            //HomeBuildingManager.GetInstance().Add(go);
         }
     }
 }

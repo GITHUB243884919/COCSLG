@@ -69,8 +69,8 @@ namespace Game
 
         void SceneCallback()
         {
-            var getter = ResHelper.LoadGameObject("prefabs/homebuilding/homebuilding");
-            var go = getter.Get();
+            //var getter = ResHelper.LoadGameObject("prefabs/homebuilding/homebuilding");
+            //var go = getter.Get();
         }
 
     }

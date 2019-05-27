@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UFrame.Common;
+using COCSLG_Game;
 namespace UFrame.CameraController
 {
     /// <summary>
@@ -10,28 +11,36 @@ namespace UFrame.CameraController
     public class FingerCamera : SingletonMono<FingerCamera>
     {
         //滑动
-        public bool couldDrag = true;
+        public bool couldDrag = false;
         public float dragSensitivity = 0.02f;
         public float dragSmoothSpeed;
         public Vector3 minMoveArea;
         public Vector3 maxMoveArea;
+        DragGesture dragGesture;
+        Vector3 dragMoveTo = Vector3.zero;
         //拉伸
         public bool pinching = false;
         public float pinchSensitivity = 0.6f;
 
-        DragGesture dragGesture;
         Transform cachedTransform;
-        Vector3 moveTo = Vector3.zero;
-        Camera cam;
+        Camera cacheCam;
+
         public override void Awake()
         {
             base.Awake();
             cachedTransform = this.transform;
-            moveTo = cachedTransform.position;
-            cam = GetComponent<Camera>();
+            dragMoveTo = cachedTransform.position;
+            cacheCam = GetComponent<Camera>();
+        }
 
-            //PointAtScreenCenter(Vector3.zero);
-
+        private void Start()
+        {
+            //var go = HomeBuildingManager.GetInstance().buildingLst[0];
+            ////var go2 = HomeBuildingManager.GetInstance().buildingLst[1];
+            ////Debug.LogError(go.transform.position + " " + go2.transform.position);
+            ////go.transform.TransformPoint(go.transform.localPosition);
+            PointAtScreenCenter(new Vector3(50, 0, -20));
+            //PointAtScreenCenter(go.transform.position);
         }
 
         //滑动
@@ -44,7 +53,6 @@ namespace UFrame.CameraController
             }
 
             dragGesture = gesture;
-
         }
 
         //拉伸
@@ -59,9 +67,7 @@ namespace UFrame.CameraController
             {
                 if (pinching)
                 {
-                    // change the scale of the target based on the pinch delta value
-                    //target.transform.localScale += gesture.Delta.Centimeters() * pinchScaleFactor * Vector3.one;
-                    cam.orthographicSize -= gesture.Delta.Centimeters() * pinchSensitivity;
+                    cacheCam.orthographicSize -= gesture.Delta.Centimeters() * pinchSensitivity;
                 }
             }
             else
@@ -86,16 +92,14 @@ namespace UFrame.CameraController
                     Vector2 screenSpaceMove = dragSensitivity * dragGesture.DeltaMove;
                     Vector3 worldSpaceMove = screenSpaceMove.x * cachedTransform.right + screenSpaceMove.y * cachedTransform.up;
 
-                    moveTo.x -= worldSpaceMove.x;
-                    moveTo.z -= worldSpaceMove.z;
+                    dragMoveTo.x -= worldSpaceMove.x;
+                    dragMoveTo.z -= worldSpaceMove.z;
 
-                    moveTo = ConstrainToMoveArea(moveTo);
+                    dragMoveTo = ConstrainToMoveArea(dragMoveTo);
                 }
             }
 
-            cachedTransform.position = Vector3.Lerp(cachedTransform.position, moveTo, Time.deltaTime * dragSmoothSpeed);
-
-
+            cachedTransform.position = Vector3.Lerp(cachedTransform.position, dragMoveTo, Time.deltaTime * dragSmoothSpeed);
         }
 
         Vector3 ConstrainToMoveArea(Vector3 moveTo)
@@ -107,23 +111,23 @@ namespace UFrame.CameraController
             return moveTo;
         }
 
+        /// <summary>
+        /// 使地面上某一点处于屏幕中间
+        /// </summary>
+        /// <param name="point"></param>
         public void PointAtScreenCenter(Vector3 point)
         {
-            Vector2 p = Vector2.zero;
-            p.x = Screen.width / 2;
-            p.y = Screen.height / 2;
+            Vector2 screenCenter = Vector2.zero;
+            screenCenter.x = Screen.width / 2;
+            screenCenter.y = Screen.height / 2;
 
-            Ray ray = Camera.main.ScreenPointToRay(point);
+            Ray ray = Camera.main.ScreenPointToRay(screenCenter);
+            Vector3 groundPoint = UFrame.Math_F.Math.GetIntersectWithLineAndGround(ray.origin, ray.direction);
 
-            Vector3 p2 =  GetIntersectWithLineAndPlane(ray.origin, ray.direction, Vector3.up, Vector3.left);
+            GameObject.CreatePrimitive(PrimitiveType.Capsule).transform.position = point;
 
-            transform.position -= (p2 - point);
-        }
-
-        Vector3 GetIntersectWithLineAndPlane(Vector3 point, Vector3 direct, Vector3 planeNormal, Vector3 planePoint)
-        {
-            float d = Vector3.Dot(planePoint - point, planeNormal) / Vector3.Dot(direct.normalized, planeNormal);
-            return d * direct.normalized + point;
+            transform.position -= (groundPoint - point);
+            dragMoveTo = transform.position;
         }
     }
 

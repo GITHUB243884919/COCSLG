@@ -7,7 +7,7 @@ namespace COCSLG_Game
 {
     public class HomeBuildingManager : Singleton<HomeBuildingManager>, ISingleton
     {
-        List<GameObject> buildingLst = new List<GameObject>();
+        public List<GameObject> buildingLst = new List<GameObject>();
 
         public void Init()
         {

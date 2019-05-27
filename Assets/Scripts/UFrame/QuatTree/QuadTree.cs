@@ -192,7 +192,7 @@ namespace UFrame.QuadTree
         public bool ContainsCircle(Vector2 circleCenter, float radius)
         {
             var center = _bounds.center;
-            var dx = Math.Abs(circleCenter.x - center.x);
+            var dx = System.Math.Abs(circleCenter.x - center.x);
             var dy = Math.Abs(circleCenter.y - center.y);
             if (dx > (_bounds.width / 2 + radius)) { return false; }
             if (dy > (_bounds.height / 2 + radius)) { return false; }

@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace COCSLG_Game
 {
+    /// <summary>
+    /// 使用的GL画线，必须挂在相机上
+    /// </summary>
+    [ExecuteInEditMode]
     public class DrawHomeGrid : MonoBehaviour
     {
         GL_Grid grid;
@@ -19,7 +23,6 @@ namespace COCSLG_Game
 
             lineMaterial = new Material(Shader.Find("Custom/Colored_Blended"));
             lineMaterial.hideFlags = HideFlags.HideAndDontSave;
-            //lineMaterial.shader.hideFlags = HideFlags.None;
         }
 
         void OnPostRender()
