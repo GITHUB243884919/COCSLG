@@ -10,6 +10,7 @@ namespace Game
         public bool loginSuccess = false;
         int GameLogic_LoginSuccessed;
         LuaInterface.LuaTable luaMsgTable;
+        LuaInterface.LuaFunction luaFunEnter;
         LuaInterface.LuaFunction luaFunLeave;
         public StateLogin(string stateName, FSMMachine fsmCtr) : base(stateName, fsmCtr)
         {
@@ -22,20 +23,13 @@ namespace Game
             loginSuccess = false;
             
             UFrameLuaClient.GetMainState().DoFile("UFrame/Game/GameState/StateLogin.lua");
-            var luaFunEnter = UFrameLuaClient.GetMainState().GetFunction("StateLogin.Enter");
-            luaFunLeave = UFrameLuaClient.GetMainState().GetFunction("StateLogin.Leave");
-            if (luaFunEnter != null)
-            {
-                Logger.LogWarp.Log("call luaFunEnter");
-                luaFunEnter.Call();
-                luaFunEnter.Dispose();
-                luaFunEnter = null;
-            }
-
             luaMsgTable = UFrameLuaClient.GetMainState().GetTable("MessageCode");
-            GameLogic_LoginSuccessed = (int)(double)(luaMsgTable["GameLogic_LoginSuccessed"]);
-            MessageManager.GetInstance().gameMessageCenter.Regist(GameLogic_LoginSuccessed, MessageCallback);
+            luaFunEnter = UFrameLuaClient.GetMainState().GetFunction("StateLogin.Enter");
+            luaFunLeave = UFrameLuaClient.GetMainState().GetFunction("StateLogin.Leave");
 
+            CallLuaFunc(luaFunEnter);
+
+            RegistLuaMessage();
         }
 
         public override void AddAllConvertCond()
@@ -58,17 +52,11 @@ namespace Game
 
         public override void Leave()
         {
-            MessageManager.GetInstance().gameMessageCenter.UnRegist(GameLogic_LoginSuccessed, MessageCallback);
-            if (luaFunLeave != null)
-            {
-                Logger.LogWarp.Log("call luaFunLeave");
-                luaFunLeave.Call();
-                luaFunLeave.Dispose();
-                luaFunLeave = null;
-            }
-
+            UnRegistLuaMessage();
             luaMsgTable.Dispose();
             luaMsgTable = null;
+
+            CallLuaFunc(luaFunLeave);
             base.Leave();
         }
 
@@ -85,6 +73,33 @@ namespace Game
                 loginSuccess = true;
             }
         }
+
+        void CallLuaFunc(LuaInterface.LuaFunction luaFun)
+        {
+            if (luaFun != null)
+            {
+                luaFun.Call();
+                luaFun.Dispose();
+                luaFun = null;
+            }
+        }
+
+        void RegistLuaMessage()
+        {
+            var luaMsgCode = (luaMsgTable["GameLogic_LoginSuccessed"]);
+            if (luaMsgCode != null)
+            {
+                GameLogic_LoginSuccessed = (int)(double)(luaMsgCode);
+                MessageManager.GetInstance().gameMessageCenter.Regist(GameLogic_LoginSuccessed, MessageCallback);
+            }
+        }
+
+
+        void UnRegistLuaMessage()
+        {
+            MessageManager.GetInstance().gameMessageCenter.UnRegist(GameLogic_LoginSuccessed, MessageCallback);
+        }
+
     }
 }
 

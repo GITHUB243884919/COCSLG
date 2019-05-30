@@ -33,7 +33,6 @@ namespace COCSLG_Game
 
         void InitHomeBuilding()
         {
-            Debug.LogError("InitHomeBuilding ");
             if (homeBuildingRoot == null)
             {
                 homeBuildingRoot = GameObject.Find("home_root/homebuilding_root").transform;
@@ -44,7 +43,7 @@ namespace COCSLG_Game
             go.transform.SetParent(homeBuildingRoot);
             go.transform.position = new Vector3(0, 0, 0);
             HomeBuildingManager.GetInstance().Add(go);
-            Debug.Log(HomeBuildingManager.GetInstance().Count());
+            //Debug.Log(HomeBuildingManager.GetInstance().Count());
 
             UFrame.CameraController.FingerCamera.GetInstance().PointAtScreenCenter(new Vector3(0, 0, 0));
         }

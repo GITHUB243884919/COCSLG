@@ -18,6 +18,7 @@ namespace Game
 
         public override void Enter(string preStateName)
         {
+            Logger.LogWarp.Log("Enter StateHome");
             base.Enter(preStateName);
 
             returnLogin = false;
@@ -70,6 +71,7 @@ namespace Game
 
         void SceneCallback()
         {
+            Logger.LogWarp.Log("Home scene load ok!");
             COCSLG_Game.HomeManager.GetInstance().Init();
         }
 
